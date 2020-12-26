@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import {ThemeProvider} from 'styled-components'
+import Switcher from './components/Switcher'
+import GlobalStyle from './GlobalStyle'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+import light from './themes/light'
+import dark from './themes/dark'
+
+const App = () => {
+
+  const[theme, setTheme] = useState(light)
+
+  const handleTheme = () => {
+    setTheme(theme.title === 'light'? dark : light )
+  }
+
+  return(
+   <ThemeProvider theme={theme} >
+      <div>
+      <GlobalStyle/>
+      <p>Hello from Theme Switcher</p>
+      <Switcher toggleTheme={handleTheme}/>
     </div>
-  );
+   </ThemeProvider>
+  )
 }
 
-export default App;
+export default App

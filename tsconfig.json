@@ -20,7 +20,11 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
+  "files" : [
+    "./src/themes/styled.d.ts"
+  ],
   "include": [
     "src"
   ]
+ 
 }
