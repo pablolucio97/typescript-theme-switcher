@@ -18,7 +18,7 @@ const App = () => {
    <ThemeProvider theme={theme} >
       <div>
       <GlobalStyle/>
-      <p>Hello from Theme Switcher</p>
+      <h1>Hello from Theme Switcher</h1>
       <Switcher toggleTheme={handleTheme}/>
     </div>
    </ThemeProvider>

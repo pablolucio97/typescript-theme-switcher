@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 
-import {BoxSwitcher} from './styles'
+import {BoxSwitcher, Button} from './styles'
 import GlobalStyle from '../GlobalStyle'
 import{ThemeContext} from 'styled-components'
 
@@ -15,9 +15,9 @@ const Switcher : React.FC<Props> = ({toggleTheme}) => {
     return(
         <BoxSwitcher >
           <GlobalStyle/>
-         <button onClick={toggleTheme}>
+         <Button onClick={toggleTheme}>
              {title === 'light'? 'Jump to Dark Theme' : 'Jump to Light Theme'}
-        </button>
+        </Button>
         </BoxSwitcher>
     )
 }
